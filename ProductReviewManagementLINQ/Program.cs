@@ -70,7 +70,10 @@ namespace ProductReviewManagementLINQ
             //Management.RetrieveRecordWithTrueIsLike(); 
 
             //UC10
-            Management.FindAverageRatingOfTheEachProductId();
+            //Management.FindAverageRatingOfTheEachProductId();
+
+            //UC11
+            Management.RetrieveRecordsWithReviewContainsNice();
         }
 
 
