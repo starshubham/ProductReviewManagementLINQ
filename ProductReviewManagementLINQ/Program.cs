@@ -24,11 +24,11 @@ namespace ProductReviewManagementLINQ
                new ProductReview() { ProductId = 10, UserId = 41, Rating = 6, Review = "Excelent", isLike = false }, //Adding Data
                new ProductReview() { ProductId = 11, UserId = 5, Rating = 4, Review = "Nice", isLike = false }, //Adding Data
                new ProductReview() { ProductId = 12, UserId = 4, Rating = 1, Review = "Very Bad", isLike = true }, //Adding Data
-               new ProductReview() { ProductId = 11, UserId = 48, Rating = 0, Review = "Excelent", isLike = false }, //Adding Data
+               new ProductReview() { ProductId = 11, UserId = 10, Rating = 0, Review = "Excelent", isLike = false }, //Adding Data
                new ProductReview() { ProductId = 14, UserId =41, Rating = 3, Review = "Average", isLike = true }, //Adding Data
                new ProductReview() { ProductId = 11, UserId = 51, Rating = 4, Review = "Nice", isLike = true }, //Adding Data
                new ProductReview() { ProductId = 16, UserId = 8, Rating = 1, Review = "Very Bad", isLike = false }, //Adding Data
-               new ProductReview() { ProductId = 17, UserId = 18, Rating = 7, Review = "Excelent", isLike = true }, //Adding Data
+               new ProductReview() { ProductId = 17, UserId = 10, Rating = 7, Review = "Excelent", isLike = true }, //Adding Data
                new ProductReview() { ProductId = 22, UserId = 9, Rating = 5, Review = "Good", isLike = true }, //Adding Data
                new ProductReview() { ProductId = 19, UserId = 10, Rating = 4, Review = "Nice", isLike = false }, //Adding Data
                new ProductReview() { ProductId = 20, UserId = 7, Rating = 3, Review = "Average", isLike = true }, //Adding Data
@@ -73,7 +73,10 @@ namespace ProductReviewManagementLINQ
             //Management.FindAverageRatingOfTheEachProductId();
 
             //UC11
-            Management.RetrieveRecordsWithReviewContainsNice();
+            //Management.RetrieveRecordsWithReviewContainsNice();
+
+            //UC12
+            Management.RetrieveRecordsForGivenUserIdOrderByRating(); 
         }
 
 
