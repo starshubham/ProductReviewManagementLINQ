@@ -46,7 +46,10 @@ namespace ProductReviewManagementLINQ
             //management.IterateProductReview(productReviewlist);
 
             //UC2
-            Management.RetrieveTop3records(productReviewlist); 
+            //Management.RetrieveTop3records(productReviewlist);
+
+            //UC3
+            Management.RetrieveRecordsWithGreaterThanThreeRating(productReviewlist); 
         }
 
 
