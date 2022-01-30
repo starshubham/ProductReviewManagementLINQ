@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace ProductReviewManagementLINQ
 {
@@ -38,7 +39,38 @@ namespace ProductReviewManagementLINQ
                new ProductReview() { ProductId = 25, UserId = 12, Rating = 3, Review = "Average", isLike = false }, //Adding Data
               
             };
-            
+            //CreateDataTable(); 
+
+            Management management = new Management();  //Creating Object of Management class
+
+            //UC1
+            management.IterateProductReview(productReviewlist);
+
+        }
+
+
+        /* Class Program*/
+        public static void CreateDataTable() //create method
+        {
+            DataTable table = new DataTable(); //create table and create object
+            table.Columns.Add("ProductId");     // add Columns in table
+            table.Columns.Add("ProductName"); // add Columns in table
+
+            table.Rows.Add("1", "Laptop"); //add rows on table
+            table.Rows.Add("2", "Mobile");
+            table.Rows.Add("3", "Tablet");
+            table.Rows.Add("4", "Desktop");
+            table.Rows.Add("5", "Watch");
+            DisplayTableProduct(table);
+
+        }
+        public static void DisplayTableProduct(DataTable table) //Create DisplayTableProduct method
+        {
+            var Productname = from product in table.AsEnumerable() select product.Field<string>("ProductName"); //Fetch Products of the table
+            foreach (var item in Productname) //Iterate 
+            {
+                Console.WriteLine($"ProductName:- {item}"); //print 
+            }
         }
     }
 }
