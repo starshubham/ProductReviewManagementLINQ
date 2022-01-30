@@ -54,5 +54,19 @@ namespace ProductReviewManagementLINQ
                 Console.WriteLine($"ProductId:- {List.ProductId}   || UserId:- {List.UserId}   || Rating:- {List.Rating}   || Review:- {List.Review }   ||   IsLike:- {List.isLike }"); //Print data
             }
         }
+
+        /* UC4:- Product Review Management.
+                 - Retrieve count of review present for each productID.
+                 - Use groupBy LINQ Operator. 
+         */
+        public static void RetrieveCountOfReviewForEachProductId(List<ProductReview> productReviewlist)
+        {
+            var RecordedData = (productReviewlist.GroupBy(p => p.ProductId).Select(x => new { ProductId = x.Key, Count = x.Count() }));
+            Console.WriteLine("\n Count group by ProductId");
+            foreach (var List in RecordedData)
+            {
+                Console.WriteLine($"ProductId:- {List.ProductId}   || Count :- {List.Count}"); //Print data
+            }
+        }
     }
 }
