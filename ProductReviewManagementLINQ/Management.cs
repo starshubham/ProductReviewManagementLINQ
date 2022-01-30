@@ -91,5 +91,26 @@ namespace ProductReviewManagementLINQ
                 Console.WriteLine(ex.Message);
             }
         }
+
+        /* UC6:- Product Review Management.
+                 - Skip top 5 records from the list using LINQ and display other Records.
+        */
+        public static void SkipTopFiveRecords(List<ProductReview> productReviewlist)
+        {
+            try
+            {
+                var RecordedData = (from products in productReviewlist
+                                    select products).Skip(5);
+                Console.WriteLine("\n Skiping the Top five records and Display others ");
+                foreach (var productReview in RecordedData) //traversing each items
+                {
+                    Console.WriteLine($"ProductId:- {productReview.ProductId}\tUserId:- {productReview.UserId}\tRating:- {productReview.Rating}\t  Review:- {productReview.Review}  \t    isLike:- {productReview.isLike}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }
